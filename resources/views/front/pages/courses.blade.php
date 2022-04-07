@@ -44,7 +44,7 @@
                         <li>
                           <div>
                             <div class="left-image">
-                              <img src="assets/images/courses-02.jpg" alt="">
+                              <img src="{{ asset('img/courses-02.jpg') }}" alt="">
                               <div class="price"><h6>$156</h6></div>
                             </div>
                             <div class="right-content">
@@ -62,7 +62,7 @@
                         <li>
                           <div>
                             <div class="left-image">
-                              <img src="assets/images/courses-03.jpg" alt="">
+                              <img src="{{ asset('img/courses-03.jpg') }}" alt="">
                               <div class="price"><h6>$184</h6></div>
                             </div>
                             <div class="right-content">
@@ -80,7 +80,7 @@
                         <li>
                           <div>
                             <div class="left-image">
-                              <img src="assets/images/courses-04.jpg" alt="">
+                              <img src="{{ asset('img/courses-04.jpg') }}" alt="">
                               <div class="price"><h6>$76</h6></div>
                             </div>
                             <div class="right-content">

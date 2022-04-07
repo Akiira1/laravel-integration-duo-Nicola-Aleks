@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/front/layouts/app', function () {
-    return view('app');
+Route::get('/admin', function () {
+    return view('/back/layouts/admin');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
