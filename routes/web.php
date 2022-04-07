@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\TitleController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\MapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +27,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+Route::resource('/back/title', TitleController::class);
+Route::resource('/back/banner', BannerController::class);
+Route::resource('/back/service', ServiceController::class);
+Route::resource('/back/testimonial', TestimonialController::class);
+Route::get('/back/maps', [MapController::class, 'index'])->name('map.index');
+Route::get('/back/maps/{id}/show', [MapController::class, 'show'])->name('map.show');
+Route::get('/back/maps/{id}/edit', [MapController::class, 'edit'])->name('map.edit');
+Route::post('/back/maps/{id}/update', [MapController::class, 'update'])->name('map.update');
