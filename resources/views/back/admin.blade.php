@@ -9,6 +9,7 @@
 </head>
 <body>
     @yield('content')
+    <h1 class='text-danger fw-bold fs-1'>ceci est la page admin</h1>
     <script src='{{ asset('js/app.js') }}'></script>
 </body>
 </html>
