@@ -15,7 +15,8 @@
         top: 0;
         height: 100%;
         width: 78px;
-        background: #11101D;
+        background: rgb(246,191,159);
+        background: linear-gradient(0deg, rgba(246,191,159,1) 10%, rgba(219,138,222,1) 100%);
         padding: 6px 14px;
         z-index: 99;
         transition: all 0.5s ease;
@@ -167,7 +168,7 @@
         align-items: center;
         text-decoration: none;
         transition: all 0.4s ease;
-        background: #11101D;
+        background: #11101d5b;
     }
 
     .sidebar li a:hover {
@@ -209,7 +210,7 @@
         left: 0;
         bottom: -8px;
         padding: 10px 14px;
-        background: #1d1b31;
+        background: #11101d5b;
         transition: all 0.5s ease;
         overflow: hidden;
     }
@@ -249,7 +250,7 @@
         top: 50%;
         right: 0;
         transform: translateY(-50%);
-        background: #1d1b31;
+        background: #d87708;
         width: 100%;
         height: 60px;
         line-height: 60px;
@@ -296,8 +297,8 @@
 
 <div class="sidebar">
     <div class="logo-details">
-        <i class='bx bx-basketball' ></i>
-        <div class="logo_name">Volleybar</div>
+        <i class='bx bx-cylinder'></i>
+        <div class="logo_name">Eduwell</div>
         <i class='bx bx-chevrons-left' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -353,12 +354,12 @@
             <div class="profile-details">
                 <!--<img src="profile.jpg" alt="profileImg">-->
                 <div class="name_job">
-                    <div class="name">Prem Shahi</div>
-                    <div class="job">Web designer</div>
+                    <div class="name">Nicola/Aleks </div>
+                    <div class="job">Web developper</div>
                 </div>
             </div>
 
-            <a title="hellow world" class="hover" href="/"><i class='bx bx-log-out' id="log_out"></i></a>
+            <a class="hover" href="/"><i class='bx bx-log-out' id="log_out"></i></a>
         </li>
     </ul>
 </div>
