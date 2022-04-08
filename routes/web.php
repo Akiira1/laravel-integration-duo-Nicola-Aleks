@@ -6,6 +6,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\RoleController;
+use App\Models\Banner;
+use App\Models\Title;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $titles = Title::all();
+    $banners = Banner::all();
+    return view('welcome', compact('titles', 'banners'));
 });
 Route::get('/admin', function () {
     return view('/back/layouts/admin');
