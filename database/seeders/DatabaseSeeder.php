@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
 			ServiceSeeder::class,
 			TestimonialSeeder::class,
 			MapSeeder::class,
+            UserSeeder::class,
 		]);
     }
 }

@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>Title</h1>
+        <h1 class='mb-5 fs-1'>Titles</h1>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -16,7 +16,6 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('title.create') }}' role='button'>Create</a>
         <table class='table'>
             <thead>
                 <tr>
@@ -30,15 +29,10 @@
                 @foreach ($titles as $title)
                     <tr>
                         <th scope='row'>{{ $title->id }}</th>
-						<td>{{ $title->title }}</td>
-						<td>{{ $title->subtitle }}</td>
-                        <td> {{-- all_td_anchor --}}
+						<td class="px-2">{{ $title->title }}</td>
+						<td class="px-2">{{ $title->subtitle }}</td>
+                        <td class="px-2">
                             <div class='d-flex'>
-                                <form action='{{ route('title.destroy', $title->id) }}' method='post'>
-                                    @csrf
-                                    @method('delete')
-                                    <button class=btn btn-danger type=submit>Delete</button>
-                                </form>
                                 <a class='btn btn-primary' href='{{ route('title.edit', $title->id) }}' role='button'>Edit</a>
                                 <a class='btn btn-primary' href='{{ route('title.show', $title->id) }}' role='button'>Read</a>
                             </div>
