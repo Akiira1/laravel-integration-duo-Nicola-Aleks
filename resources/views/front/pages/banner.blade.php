@@ -13,7 +13,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="right-image">
-                    <img src="{{ '/img/' . $banners[0]->image }}" alt="">
+                    <img src="{{ asset('img/' . $banners[0]->image) }}" alt="">
                 </div>
             </div>
         </div>

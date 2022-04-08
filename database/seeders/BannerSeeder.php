@@ -18,7 +18,7 @@ class BannerSeeder extends Seeder
         //
 		DB::table("banners")->insert([
 			'button' => 'JOIN US NOW!',
-			'image' => 'banner-right-img.jpg',
+			'image' => 'banner-right-image.png',
 		]);
     }
 }

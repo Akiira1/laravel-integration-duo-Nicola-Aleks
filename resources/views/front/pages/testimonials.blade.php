@@ -3,8 +3,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="section-heading">
-                <h6>Testimonials</h6>
-                <h4>What They <em>Think</em></h4>
+                <h6>{{ $titles[3]->title }}</h6>
+                <h4>{{ $titles[3]->subtitle }}</h4>
               </div>
             </div>
             <div class="col-lg-12">
