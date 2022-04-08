@@ -2,6 +2,7 @@
     .min-h-screen{
         background: rgb(246,191,159);
         background: linear-gradient(0deg, rgba(246,191,159,1) 10%, rgba(219,138,222,1) 100%);
+        back
     }
     .bg{
         background-color: rgba(219, 103, 8, 0.151);
