@@ -20,19 +20,19 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
-					<th scope='col'>title</th>
-					<th scope='col'>subtitle</th>
-                    <th scope='col'>Action</th> {{-- all_tr_anchor --}}
+                    <th class="noBorder" scope='col'>#</th>
+					<th class="noBorder" scope='col'>title</th>
+					<th class="noBorder" scope='col'>subtitle</th>
+                    <th class="noBorder" scope='col'>Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($titles as $title)
                     <tr>
                         <th scope='row'>{{ $title->id }}</th>
-						<td class="px-2">{{ $title->title }}</td>
-						<td class="px-2">{{ $title->subtitle }}</td>
-                        <td class="px-2">
+						<td class="px-2 py-2">{{ $title->title }}</td>
+						<td class="px-2 py-2">{{ $title->subtitle }}</td>
+                        <td class="px-2 py-2">
                             <div class='d-flex'>
                                 <a class='btn btn-primary' href='{{ route('title.edit', $title->id) }}' role='button'>Edit</a>
                                 <a class='btn btn-primary' href='{{ route('title.show', $title->id) }}' role='button'>Read</a>
