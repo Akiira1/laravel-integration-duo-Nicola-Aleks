@@ -35,5 +35,5 @@
     </button>
    </div>
 </div>
- <embed src="{{ asset('/img/test.mp3') }}" loop="true" autostart="true" width="2" height="0">
+ <embed src="{{ asset('/img/dash.mp3') }}" loop="false" autostart="true" width="2" height="0">
 @endsection
