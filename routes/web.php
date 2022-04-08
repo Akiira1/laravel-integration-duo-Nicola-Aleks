@@ -5,6 +5,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,6 @@ Route::get('/back/maps', [MapController::class, 'index'])->name('map.index');
 Route::get('/back/maps/{id}/show', [MapController::class, 'show'])->name('map.show');
 Route::get('/back/maps/{id}/edit', [MapController::class, 'edit'])->name('map.edit');
 Route::post('/back/maps/{id}/update', [MapController::class, 'update'])->name('map.update');
+Route::get('/back/roles', [RoleController::class, 'index'])->name('role.index');
+Route::get('/back/roles/{id}/show', [RoleController::class, 'show'])->name('role.show');
+Route::post('/back/roles/{id}/delete', [RoleController::class, 'destroy'])->name('role.destroy');
