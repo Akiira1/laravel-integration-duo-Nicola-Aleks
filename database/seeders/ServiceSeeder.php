@@ -17,64 +17,29 @@ class ServiceSeeder extends Seeder
     {
         //
 		DB::table("services")->insert([
-			'icone' => 'img/service-icon-01.png',
-			'title' => 'Useful Tricks',
-			'description' => '',
-		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-02.png',
+			'icone' => 'service-icon-01.png',
 			'title' => 'Creative Ideas',
-			'description' => '',
+			'description' => 'You can download and use this EduWell Template for your teaching and learning stuffs.',
 		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-03.png',
-			'title' => 'Ready Target',
-			'description' => '',
-		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-04.png',
-			'title' => 'Technology',
-			'description' => '',
-		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-01.png',
+        DB::table("services")->insert([
+			'icone' => 'service-icon-02.png',
 			'title' => 'Useful Tricks',
-			'description' => '',
+			'description' => 'EduWell is the professional HTML5 template for your school or university websites.',
 		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-02.png',
-			'title' => 'Creative Ideas',
-			'description' => '',
-		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-03.png',
+        DB::table("services")->insert([
+			'icone' => 'service-icon-03.png',
 			'title' => 'Ready Target',
-			'description' => '',
+			'description' => 'Please tell your friends about the best CSS template website that is TemplateMo.',
 		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-04.png',
+        DB::table("services")->insert([
+			'icone' => 'service-icon-04.png',
 			'title' => 'Technology',
-			'description' => '',
+			'description' => 'Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.',
 		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-01.png',
-			'title' => 'Useful Tricks',
-			'description' => '',
-		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-02.png',
+        DB::table("services")->insert([
+			'icone' => 'service-icon-01.png',
 			'title' => 'Creative Ideas',
-			'description' => '',
-		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-03.png',
-			'title' => 'Ready Target',
-			'description' => '',
-		]);
-		DB::table("services")->insert([
-			'icone' => 'img/service-icon-04.png',
-			'title' => 'Technology',
-			'description' => '',
+			'description' => 'EduWell is the professional HTML5 template for your school or university websites.',
 		]);
     }
 }
