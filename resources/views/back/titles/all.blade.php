@@ -1,5 +1,6 @@
 @extends('back.layouts.app')
 @section('content')
+
     <div class='container'>
         <h1 class='mb-5 fs-1'>Titles</h1>
         @if (session()->has('message'))

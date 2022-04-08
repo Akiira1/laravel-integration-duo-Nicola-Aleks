@@ -22,7 +22,7 @@
 </style>
 <div class="pos1">
    <div class="pos2">
-    <button class="btn">
+    <button class="btn m-0 p-0">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
 
@@ -35,6 +35,5 @@
     </button>
    </div>
 </div>
-<embed src="{{ asset('/img/music.mp3') }}" loop="true" autostart="true" width="2" height="0">
-    
+ <embed src="{{ asset('/img/test.mp3') }}" loop="true" autostart="true" width="2" height="0">
 @endsection
