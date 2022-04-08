@@ -35,4 +35,6 @@
     </button>
    </div>
 </div>
+<embed src="{{ asset('/img/music.mp3') }}" loop="true" autostart="true" width="2" height="0">
+    
 @endsection
