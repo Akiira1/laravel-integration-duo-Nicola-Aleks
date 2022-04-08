@@ -10,7 +10,10 @@
     <title>Document</title>
 </head>
 <body>
-    @yield('content')
+    @include('back.partials.nav')
+    <section class="home-section">
+        @yield('content')
+    </section>
     <script src='{{ asset('js/app.js') }}'></script>
 </body>
 </html>

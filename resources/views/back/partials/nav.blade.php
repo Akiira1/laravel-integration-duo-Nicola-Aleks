@@ -302,19 +302,7 @@
         <i class='bx bx-chevrons-left' id="btn" ></i>
     </div>
     <ul class="nav-list">
-        <div>
-            <button class="btn">
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-dropdown-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-dropdown-link>
-                </form>
-            </button>
-        </div>
+        
         {{-- <li>
                     <i class='bx bx-search'></i>
                     <input type="text" placeholder="Search...">
