@@ -5,7 +5,7 @@
             <div class="col-lg-6 align-self-center">
                 <div class="header-text">
                     <h6>{{ $titles[0]->title }}</h6>
-                    <h2>{{ $titles[0]->subtitle }}</h2>
+                    <h2>{!! $titles[0]->subtitle !!}</h2>
                     <div class="main-button-gradient">
                         <div class="scroll-to-section"><a href="#contact-section">{{ $banners[0]->button }}</a></div>
                     </div>

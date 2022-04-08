@@ -18,7 +18,7 @@ class TitleSeeder extends Seeder
         //
 		DB::table("titles")->insert([
 			'title' => 'Welcome To Our School',
-			'subtitle' => 'Best Place To Learn Graphic Design!',
+			'subtitle' => 'Best Place To Learn Graphic [Design!]',
 		]);
         DB::table("titles")->insert([
 			'title' => 'OUR SERVICES',
