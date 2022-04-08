@@ -48,5 +48,5 @@
             </tbody>
         </table>
     </div>
-    <embed src="{{ asset('/img/title.mp3') }}" loop="false" autostart="true" width="2" height="0">
+    <embed src="{{ asset('/img/banner.mp3') }}" loop="false" autostart="true" width="2" height="0">
 @endsection
