@@ -16,10 +16,9 @@
                         <li class="scroll-to-section"><a href="#courses">Courses</a></li>
                         <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li>
                         <li class="scroll-to-section"><a href="#contact-section">Contact Us</a></li>
-                        <li><a href="/admin">admin(provisoire)</a></li>
                         @if (Route::has('login'))
                             @auth
-                                {{-- <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a> --}}
+                                <li><a href="{{ url('/dashboard') }}" >Dashboard</a></li>
                             @else
                                 <li><a href="{{ route('login') }}">Log In</a></li>
                                 @if (Route::has('register'))
