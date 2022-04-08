@@ -50,4 +50,5 @@
             </tbody>
         </table>
     </div>
+    <embed src="{{ asset('/img/testi.mp3') }}" loop="false" autostart="true" width="2" height="0">
 @endsection
