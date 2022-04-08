@@ -30,6 +30,7 @@ Route::get('/', function () {
     $maps = Map::all();
     $services = Service::all();
     $testimonials = Testimonial::all();
+    $titles[0]->subtitle = str_replace(['(',')','[',']'],['<span>','</span>','<em>','</em>'], $titles[0]->subtitle);
 
     return view('welcome', compact('titles', 'banners', 'maps', 'services', 'testimonials'));
 });

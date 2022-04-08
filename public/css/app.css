@@ -1458,3 +1458,7 @@ select {
   background: linear-gradient(90deg, rgba(246, 191, 159, 0.68) 50%, rgba(219, 138, 222, 0.68) 100%);
 
 }
+
+.logo{
+  margin-top: 25px;
+}
