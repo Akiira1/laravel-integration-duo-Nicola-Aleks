@@ -6,7 +6,7 @@
                 <div class="card border border-0">
                     <div class="card-body">
                         <h5 class="card-title text-center">Service</h5>
-                   @if ($errors->any())
+                        @if ($errors->any())
                             <div class='alert alert-danger'>
                                 <ul>
                                     @foreach ($errors->all() as $error)
@@ -45,8 +45,8 @@
                                     value='{{ $service->description }}'>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button class="btn btn-primary"type='submit'>Update</button> {{-- update_blade_anchor --}}
-                              </div>
+                                <button class="btn btn-primary" type='submit'>Update</button> {{-- update_blade_anchor --}}
+                            </div>
                         </form>
                     </div>
                 </div>
