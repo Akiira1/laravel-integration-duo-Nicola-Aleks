@@ -6,18 +6,18 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-					<th scope='col'>link</th>
 					<th scope='col'>name</th>
-					<th scope='col'>number</th>
+					<th scope='col'>phone</th>
+					<th scope='col'>mobile</th>
                     <th scope='col'>Action</th> {{-- show_tr_anchor --}}
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope='row'>{{ $map->id }}</th>
-						<td>{{ $map->link }}</td>
 						<td>{{ $map->name }}</td>
-						<td>{{ $map->number }}</td>
+						<td>{{ $map->phone }}</td>
+						<td>{{ $map->mobile }}</td>
                     <td> {{-- show_td_anchor --}}
                         <a class='btn btn-primary' href='{{ route('map.index') }}' role='button'>Back</a>
                     </td>

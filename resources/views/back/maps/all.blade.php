@@ -20,10 +20,7 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-					<th scope='col'>name</th>
 					<th scope='col'>address</th>
-					<th scope='col'>longitude</th>
-                    <th scope='col'>latitude</th>
                     <th scope='col'>phone</th>
                     <th scope='col'>number</th>
                     <th scope='col'>Action</th> {{-- all_tr_anchor --}}
@@ -34,9 +31,6 @@
                     <tr>
                         <th scope='row'>{{ $map->id }}</th>
 						<td>{{ $map->name }}</td>
-						<td>{{ $map->address_address }}</td>
-						<td>{{ $map->address_latitude }}</td>
-						<td>{{ $map->address_longitude }}</td>
 						<td>{{ $map->phone }}</td>
 						<td>{{ $map->mobile }}</td>
                         <td> {{-- all_td_anchor --}}
