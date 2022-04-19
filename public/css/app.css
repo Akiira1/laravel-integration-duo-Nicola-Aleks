@@ -1452,7 +1452,7 @@ select {
   }
 }
 
-.table{
+.table, card{
   padding: 10px;
   border-radius : 20px;
   background: linear-gradient(90deg, rgba(246, 191, 159, 0.68) 50%, rgba(219, 138, 222, 0.68) 100%);
@@ -1462,3 +1462,4 @@ select {
 .logo{
   margin-top: 25px;
 }
+
