@@ -36,16 +36,13 @@ class MapController extends Controller
         $map = Map::find($id);
         $request->validate([
             'name' => 'required',
-            'address_address' => 'required',
-            'address_latitude' => 'required',
-            'address_longitude' => 'required',
             'phone' => 'required',
             'mobile' => 'required',
         ]); // update_validated_anchor;
-        $map->link = $request->link;
         $map->name = $request->name;
-        $map->number = $request->number;
-        $map->save(); // update_anchor
+        $map->phone = $request->phone;
+        $map->mobile = $request->mobile;
+        $map->save();
         return redirect()->route("map.index")->with("message", "Successful update !");
     }
 }
