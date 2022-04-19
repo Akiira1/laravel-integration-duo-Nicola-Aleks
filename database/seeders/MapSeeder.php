@@ -15,11 +15,14 @@ class MapSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //50,855409, 4,341261
 		DB::table("maps")->insert([
-			'link' => '',
-			'name' => '',
-			'number' => '',
+            'name' => 'Molengeek',
+            'address_address' => 'Rue de la minoterie 10, 1080 Bruxelles',
+            'address_latitude' => '50.855409',
+            'address_longitude' => '4.341261',
+            'phone' => '010-020-0340',
+            'mobile' => '090-080-0760',
 		]);
     }
 }

@@ -20,9 +20,12 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-					<th scope='col'>link</th>
 					<th scope='col'>name</th>
-					<th scope='col'>number</th>
+					<th scope='col'>address</th>
+					<th scope='col'>longitude</th>
+                    <th scope='col'>latitude</th>
+                    <th scope='col'>phone</th>
+                    <th scope='col'>number</th>
                     <th scope='col'>Action</th> {{-- all_tr_anchor --}}
                 </tr>
             </thead>
@@ -30,9 +33,12 @@
                 @foreach ($maps as $map)
                     <tr>
                         <th scope='row'>{{ $map->id }}</th>
-						<td>{{ $map->link }}</td>
 						<td>{{ $map->name }}</td>
-						<td>{{ $map->number }}</td>
+						<td>{{ $map->address_address }}</td>
+						<td>{{ $map->address_latitude }}</td>
+						<td>{{ $map->address_longitude }}</td>
+						<td>{{ $map->phone }}</td>
+						<td>{{ $map->mobile }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
 								<a class='btn btn-primary' href='{{ route('map.show', $map->id) }}' role='button'>Read</a>
