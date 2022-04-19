@@ -39,7 +39,7 @@
                                 <form action='{{ route('service.destroy', $service->id) }}' method='post'>
                                     @csrf
                                     @method('delete')
-                                    <button class=btn btn-danger type=submit>Delete</button>
+                                    <button class='btn btn-danger' type=submit>Delete</button>
                                 </form>
                                 <a class='btn btn-primary' href='{{ route('service.edit', $service->id) }}' role='button'>Edit</a>
                                 <a class='btn btn-primary' href='{{ route('service.show', $service->id) }}' role='button'>Read</a>

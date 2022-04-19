@@ -39,7 +39,7 @@
                                 <form action='{{ route('testimonial.destroy', $testimonial->id) }}' method='post'>
                                     @csrf
                                     @method('delete')
-                                    <button class=btn btn-danger type=submit>Delete</button>
+                                    <button class='btn btn-danger' type=submit>Delete</button>
                                 </form>
                                 <a class='btn btn-primary' href='{{ route('testimonial.edit', $testimonial->id) }}' role='button'>Edit</a>
                                 <a class='btn btn-primary' href='{{ route('testimonial.show', $testimonial->id) }}' role='button'>Read</a>

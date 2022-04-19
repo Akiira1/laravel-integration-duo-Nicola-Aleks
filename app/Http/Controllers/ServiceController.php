@@ -21,13 +21,13 @@ class ServiceController extends Controller
     {
         $service = new Service;
         $request->validate([
-            'icone'=> 'required',
             'title'=> 'required',
             'description'=> 'required',
         ]); // store_validated_anchor;
-        $service->icone = $request->icone;
         $service->title = $request->title;
         $service->description = $request->description;
+        $service->icone = $request->file("icone")->hashName();
+        $request->file('icone')->storePublicly('img/', 'public');
         $service->save(); // store_anchor
         return redirect()->route("service.index")->with("message", "Successful storage !");
     }
