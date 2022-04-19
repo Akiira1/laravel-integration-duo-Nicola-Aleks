@@ -1,6 +1,6 @@
 @extends('back.layouts.app')
 @section('content')
-    <div class='container'>
+    <div class='container mt-4'>
         <h1>Service</h1>
         @if ($errors->any())
             <div class='alert alert-danger'>
@@ -14,26 +14,28 @@
         <form action='{{ route('service.update' , $service->id) }}' method='post'>
             @csrf
             @method('put')
+            <div class="row justify-content-center my-4">
+                @foreach ($services as $item)
+                <div class='col-2'>
+                    <img style='width: 50px; height: 50px;' src="{{"/img/" . $item->icone }}" alt="">
+                    @if ($item->icone == $service->icone)
+                    <input class="form-check-input" type="radio" id="checkboxNoLabel" value="{{ $item->icone }}" aria-label="..." name='icone' checked>
+                    @else
+                    <input class="form-check-input" type="radio" id="checkboxNoLabel" value="{{ $item->icone }}" name='icone' aria-label="...">
+                    @endif
+                  </div>
+                  @endforeach
+            </div>
+
 			<div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">Icon</label>
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected></option>
-                    @foreach ($service as $service)
-                    <option  value="{{ $service->id }}">1</option>
-                    @endforeach
-                </select>
+                <span class="input-group-text" id="basic-addon1">Title</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name='title' value='{{ $service->title }}'>
               </div>
-			<div>
-			<div>
-				<label for=''>title</label>
-				<input type='text' name='title' value='{{ $service->title }}'>
-			<div>
-                <div ></div>
-			<div>
-				<label for=''>description</label>
-				<input type='text' name='description' value='{{ $service->description }}'>
-			<div>
-            <button type='submit'>Update</button> {{-- update_blade_anchor --}}
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">description</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name='description' value='{{ $service->description }}'>
+              </div>
+            <button class="btn btn-primary"type='submit'>Update</button> {{-- update_blade_anchor --}}
         </form>
     </div>
 @endsection

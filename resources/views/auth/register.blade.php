@@ -55,5 +55,6 @@
                 </x-button>
             </div>
         </form>
+        <embed src="{{ asset('/img/decompte.mp3') }}" loop="false" autostart="true" width="2" height="0">
     </x-auth-card>
 </x-guest-layout>

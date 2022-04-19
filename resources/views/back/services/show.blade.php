@@ -15,7 +15,7 @@
             <tbody>
                 <tr>
                     <th scope='row'>{{ $service->id }}</th>
-						<td>{{ $service->icone }}</td>
+                    <td><img src="{{"/img/" . $service->icone }}" alt=""></td>
 						<td>{{ $service->title }}</td>
 						<td>{{ $service->description }}</td>
                     <td> {{-- show_td_anchor --}}
