@@ -18,12 +18,6 @@ class MapController extends Controller
         $map = Map::find($id);
         return view("/back/maps/show", compact("map"));
     }
-    public function store(MapController $request)
-    {
-        abort_unless(\Illuminate\Support\Facades\Gate::allows('map_create'), 403);
-        $map = Map::create($request->all());
-        return redirect()->route('back/maps/all');
-    }
     public function edit($id)
     {
         $map = Map::find($id);
@@ -31,8 +25,6 @@ class MapController extends Controller
     }
     public function update($id, Request $request)
     {
-        abort_unless(\Illuminate\Support\Facades\Gate::allows('map_create'), 403);
-        $map = Map::create($request->all());
         $map = Map::find($id);
         $request->validate([
             'name' => 'required',
