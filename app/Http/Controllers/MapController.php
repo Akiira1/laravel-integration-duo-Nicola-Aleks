@@ -40,10 +40,13 @@ class MapController extends Controller
             'phone' => 'required',
             'mobile' => 'required',
         ]); // update_validated_anchor;
-        $map->link = $request->link;
         $map->name = $request->name;
-        $map->number = $request->number;
-        $map->save(); // update_anchor
+        $map->address_address = $request->address_address;
+        $map->address_latitude = $request->address_latitude;
+        $map->address_longitude = $request->address_longitude;
+        $map->phone = $request->phone;
+        $map->mobile = $request->mobile;
+        $map->save();
         return redirect()->route("map.index")->with("message", "Successful update !");
     }
 }

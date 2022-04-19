@@ -22,7 +22,7 @@
 				<label for=''>image</label>
 				<input type='text' name='image' value='{{ $banner->image }}'>
 			<div>
-            <button type='submit'>Update</button> {{-- update_blade_anchor --}}
+            <button type='submit'>Update</button> 
         </form>
     </div>
 @endsection
