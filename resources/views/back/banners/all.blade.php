@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>Banner</h1>
+        <div class="bg-pink mt-2">
+            <h3 class='mb-2 fs-3 text-light text-center'>Banner</h3>
+        </div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -19,7 +21,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>button</th>
 					<th scope='col'>image</th>
                     <th scope='col'>Action</th> {{-- all_tr_anchor --}}
@@ -28,7 +29,6 @@
             <tbody>
                 @foreach ($banners as $banner)
                     <tr>
-                        <th scope='row'>{{ $banner->id }}</th>
 						<td>{{ $banner->button }}</td>
 						<td><img style='width: 150px; height: 150px;' src="{{ '/img/' . $banner->image }}" alt="">
                         </td>

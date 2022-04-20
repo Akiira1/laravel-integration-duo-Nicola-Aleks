@@ -2,7 +2,9 @@
 @section('content')
 
     <div class='container'>
-        <h1 class='mb-5 fs-1'>Titles</h1>
+        <div class="bg-pink mt-2">
+            <h3 class='mb-2 fs-3 text-light text-center'>Title</h3>
+        </div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -20,7 +22,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th class="noBorder" scope='col'>#</th>
 					<th class="noBorder" scope='col'>title</th>
 					<th class="noBorder" scope='col'>subtitle</th>
                     <th class="noBorder" scope='col'>Action</th>
@@ -29,7 +30,6 @@
             <tbody>
                 @foreach ($titles as $title)
                     <tr>
-                        <th scope='row'>{{ $title->id }}</th>
 						<td class="px-2 py-2">{{ $title->title }}</td>
 						<td class="px-2 py-2">{{ $title->subtitle }}</td>
                         <td class="px-2 py-2">

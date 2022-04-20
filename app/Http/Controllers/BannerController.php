@@ -24,11 +24,17 @@ class BannerController extends Controller
         $banner = Banner::find($id);
         $request->validate([
             'button'=> 'required',
-            'image'=> 'required',
         ]); // update_validated_anchor;
+        // $banner->image = $request->file("image")->hashName();
         $banner->button = $request->button;
-        $banner->image = $request->image;
-        $banner->save(); // update_anchor
+        if ($request->file('image') == "") {
+            $banner->image = $banner->image;
+            $banner->save(); // update_anchor
+        }else{
+            $banner->image = $request->file("image")->hashName();
+            $banner->save(); // update_anchor
+            $request->file('image')->storePublicly('img/', 'public');
+        }
         return redirect()->route("banner.index")->with("message", "Banner successfuly updated !");
     }
 

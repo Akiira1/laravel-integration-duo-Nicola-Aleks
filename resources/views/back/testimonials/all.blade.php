@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>Testimonial</h1>
+        <div class="bg-pink mt-2">
+            <h3 class='mb-2 fs-3 text-light text-center'>Testimonial</h3>
+        </div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -16,11 +18,10 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('testimonial.create') }}' role='button'>Create</a>
+        
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>name</th>
 					<th scope='col'>post</th>
 					<th scope='col'>description</th>
@@ -30,7 +31,6 @@
             <tbody>
                 @foreach ($testimonials as $testimonial)
                     <tr>
-                        <th scope='row'>{{ $testimonial->id }}</th>
 						<td>{{ $testimonial->name }}</td>
 						<td>{{ $testimonial->post }}</td>
 						<td>{{ $testimonial->description }}</td>
@@ -49,6 +49,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center mx-3">
+            <a class='btn btn-success' href='{{ route('testimonial.create') }}' role='button'>Create</a>
+        </div>
     </div>
     <embed src="{{ asset('/img/testi.mp3') }}" loop="false" autostart="true" width="2" height="0">
 @endsection

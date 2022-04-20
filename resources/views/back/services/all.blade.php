@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>Service</h1>
+        <div class="bg-pink mt-2">
+            <h3 class='mb-2 fs-3 text-light text-center'>Service</h3>
+        </div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -16,11 +18,10 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('service.create') }}' role='button'>Create</a>
+        
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>icone</th>
 					<th scope='col'>title</th>
 					<th scope='col'>description</th>
@@ -30,7 +31,6 @@
             <tbody>
                 @foreach ($services as $service)
                     <tr>
-                        <th scope='row'>{{ $service->id }}</th>
 						<td><img src="{{"/img/" . $service->icone }}" alt=""></td>
 						<td>{{ $service->title }}</td>
 						<td>{{ $service->description }}</td>
@@ -49,6 +49,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center mx-3">
+            <a class='btn btn-success' href='{{ route('service.create') }}' role='button'>Create</a>
+        </div>
     </div>
     <embed src="{{ asset('/img/service.mp3') }}" loop="false" autostart="true" width="2" height="0">
 @endsection

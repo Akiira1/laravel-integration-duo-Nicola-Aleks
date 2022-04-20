@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>Map</h1>
+        <div class="bg-pink mt-2">
+            <h3 class='mb-2 fs-3 text-light text-center'>Map</h3>
+        </div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -19,7 +21,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>address</th>
                     <th scope='col'>phone</th>
                     <th scope='col'>number</th>
@@ -29,7 +30,6 @@
             <tbody>
                 @foreach ($maps as $map)
                     <tr>
-                        <th scope='row'>{{ $map->id }}</th>
 						<td>{{ $map->name }}</td>
 						<td>{{ $map->phone }}</td>
 						<td>{{ $map->mobile }}</td>

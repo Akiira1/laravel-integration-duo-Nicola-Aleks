@@ -1466,4 +1466,8 @@ select {
 .logo{
   margin-top: 25px;
 }
+.bg-pink{
+  background-color: #e6a5c2dc;
+  border-radius: 15px;
+}
 
