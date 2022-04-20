@@ -19,7 +19,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>button</th>
 					<th scope='col'>image</th>
                     <th scope='col'>Action</th> {{-- all_tr_anchor --}}
@@ -28,7 +27,6 @@
             <tbody>
                 @foreach ($banners as $banner)
                     <tr>
-                        <th scope='row'>{{ $banner->id }}</th>
 						<td>{{ $banner->button }}</td>
 						<td><img style='width: 150px; height: 150px;' src="{{ '/img/' . $banner->image }}" alt="">
                         </td>

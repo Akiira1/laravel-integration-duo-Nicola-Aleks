@@ -19,7 +19,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>address</th>
                     <th scope='col'>phone</th>
                     <th scope='col'>number</th>
@@ -29,7 +28,6 @@
             <tbody>
                 @foreach ($maps as $map)
                     <tr>
-                        <th scope='row'>{{ $map->id }}</th>
 						<td>{{ $map->name }}</td>
 						<td>{{ $map->phone }}</td>
 						<td>{{ $map->mobile }}</td>

@@ -20,7 +20,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>icone</th>
 					<th scope='col'>title</th>
 					<th scope='col'>description</th>
@@ -30,7 +29,6 @@
             <tbody>
                 @foreach ($services as $service)
                     <tr>
-                        <th scope='row'>{{ $service->id }}</th>
 						<td><img src="{{"/img/" . $service->icone }}" alt=""></td>
 						<td>{{ $service->title }}</td>
 						<td>{{ $service->description }}</td>

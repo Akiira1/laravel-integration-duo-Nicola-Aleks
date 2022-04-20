@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,18 +16,21 @@ class UserController extends Controller
     public function create()
     {
         $users = User::all();
-        return view("/back/users/create", compact("users"));
+        $roles = Role::all();
+        return view("/back/users/create", compact("users", "roles"));
     }
     public function store(Request $request)
     {
         $user = new User;
+        $roles = Role::all();
         $request->validate([
             'name'=> 'required',
             'email'=> 'required',
+            'role'=> 'required',
         ]); // store_validated_anchor;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->role = $request->role;
+        $user->role_id = $request->role;
         $user->save(); // store_anchor
         return redirect()->route("user.index")->with("message", "New User successfuly created !");
     }
@@ -37,19 +41,21 @@ class UserController extends Controller
     }
     public function edit($id)
     {
+        $roles = Role::all();
         $users = User::all();
         $user = User::find($id);
-        return view("/back/users/edit",compact("user", "users"));
+        return view("/back/users/edit",compact("user", "users", "roles"));
     }
     public function update($id, Request $request)
     {
         $user = User::find($id);
+        $roles = Role::all();
         $request->validate([
             'role'=> 'required',
             'name'=> 'required',
             'email'=> 'required',
         ]); // update_validated_anchor;
-        $user->role = $request->role;
+        $user->role_id = $request->role;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save(); // update_anchor

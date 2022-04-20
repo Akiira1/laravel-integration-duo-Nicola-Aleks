@@ -20,7 +20,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th class="noBorder" scope='col'>#</th>
 					<th class="noBorder" scope='col'>title</th>
 					<th class="noBorder" scope='col'>subtitle</th>
                     <th class="noBorder" scope='col'>Action</th>
@@ -29,7 +28,6 @@
             <tbody>
                 @foreach ($titles as $title)
                     <tr>
-                        <th scope='row'>{{ $title->id }}</th>
 						<td class="px-2 py-2">{{ $title->title }}</td>
 						<td class="px-2 py-2">{{ $title->subtitle }}</td>
                         <td class="px-2 py-2">

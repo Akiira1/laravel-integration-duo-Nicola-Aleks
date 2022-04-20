@@ -18,6 +18,6 @@ class Role extends Model
 
 	public function user()
 	{
-		return $this->hasMany(UserController::class);
+		return $this->hasMany(User::class);
 	}
 }

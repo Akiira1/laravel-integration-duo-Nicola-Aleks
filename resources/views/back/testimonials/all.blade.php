@@ -20,7 +20,6 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
 					<th scope='col'>name</th>
 					<th scope='col'>post</th>
 					<th scope='col'>description</th>
@@ -30,7 +29,6 @@
             <tbody>
                 @foreach ($testimonials as $testimonial)
                     <tr>
-                        <th scope='row'>{{ $testimonial->id }}</th>
 						<td>{{ $testimonial->name }}</td>
 						<td>{{ $testimonial->post }}</td>
 						<td>{{ $testimonial->description }}</td>

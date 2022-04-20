@@ -15,7 +15,7 @@
                 <tr>
                     <th scope='row'>{{ $user->id }}</th>
 						<td>{{ $user->name }}</td>
-						<td>{{ $user->role_id }}</td>
+						<td>{{ $user->role->name }}</td>
                         <td> {{-- show_td_anchor --}}
                         <a class='btn btn-primary' href='{{ route('user.index') }}' role='button'>Back</a>
                     </td>
