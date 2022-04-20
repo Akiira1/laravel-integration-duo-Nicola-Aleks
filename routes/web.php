@@ -41,11 +41,19 @@ Route::get('/dashboard', function () {
     return view('/back/layouts/admin');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
 Route::resource('/back/title', TitleController::class);
 Route::resource('/back/banner', BannerController::class);
+
+
+
+
 Route::resource('/back/service', ServiceController::class);
 Route::resource('/back/testimonial', TestimonialController::class);
+
+
+
+
+
 Route::get('/back/maps', [MapController::class, 'index'])->name('map.index');
 Route::get('/back/maps/{id}/show', [MapController::class, 'show'])->name('map.show');
 Route::get('/back/maps/{id}/edit', [MapController::class, 'edit'])->name('map.edit');
@@ -53,3 +61,6 @@ Route::post('/back/maps/{id}/update', [MapController::class, 'update'])->name('m
 Route::get('/back/roles', [RoleController::class, 'index'])->name('role.index');
 Route::get('/back/roles/{id}/show', [RoleController::class, 'show'])->name('role.show');
 Route::post('/back/roles/{id}/delete', [RoleController::class, 'destroy'])->name('role.destroy');
+
+
+require __DIR__.'/auth.php';

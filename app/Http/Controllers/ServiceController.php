@@ -15,7 +15,8 @@ class ServiceController extends Controller
     }
     public function create()
     {
-        return view("/back/services/create");
+        $services = Service::all();
+        return view("/back/services/create", compact("services"));
     }
     public function store(Request $request)
     {
@@ -26,8 +27,7 @@ class ServiceController extends Controller
         ]); // store_validated_anchor;
         $service->title = $request->title;
         $service->description = $request->description;
-        $service->icone = $request->file("icone")->hashName();
-        $request->file('icone')->storePublicly('img/', 'public');
+        $service->icone = $request->icone;
         $service->save(); // store_anchor
         return redirect()->route("service.index")->with("message", "Successful storage !");
     }
