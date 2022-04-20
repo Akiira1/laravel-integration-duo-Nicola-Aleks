@@ -6,7 +6,6 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Testimonial</h5>
-
                         @if ($errors->any())
                             <div class='alert alert-danger'>
                                 <ul>
@@ -35,4 +34,24 @@
             </div>
         </form>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

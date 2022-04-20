@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>Map</h1>
+        <div class="bg-pink mt-2">
+            <h3 class='mb-2 fs-3 text-light text-center'>Map</h3>
+        </div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}

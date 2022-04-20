@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>Service</h1>
+        <div class="bg-pink mt-2">
+            <h3 class='mb-2 fs-3 text-light text-center'>Service</h3>
+        </div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -16,7 +18,7 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('service.create') }}' role='button'>Create</a>
+        
         <table class='table'>
             <thead>
                 <tr>
@@ -47,6 +49,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center mx-3">
+            <a class='btn btn-success' href='{{ route('service.create') }}' role='button'>Create</a>
+        </div>
     </div>
     <embed src="{{ asset('/img/service.mp3') }}" loop="false" autostart="true" width="2" height="0">
 @endsection

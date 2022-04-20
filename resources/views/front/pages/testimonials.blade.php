@@ -9,7 +9,7 @@
             </div>
             <div class="col-lg-12">
                 <div class="owl-testimonials owl-carousel" style="position: relative; z-index: 5;">
-                    @foreach($testimonials as $testimonial)
+                    @foreach($testimonials->shuffle() as $testimonial)
                         <div class="item">
                             <p>“{{ $testimonial->description }}”</p>
                             <h4>{{ $testimonial->name }}</h4>
