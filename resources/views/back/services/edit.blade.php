@@ -20,6 +20,7 @@
                             @method('put')
                             <div class="row justify-content-center my-4">
                                 @foreach ($services as $item)
+                                    @if ($item->id <= 4)
                                     <div class='col-2'>
                                         <img style='width: 50px; height: 50px;' src="{{ '/img/' . $item->icone }}" alt="">
                                         @if ($item->icone == $service->icone)
@@ -30,6 +31,7 @@
                                                 value="{{ $item->icone }}" name='icone' aria-label="...">
                                         @endif
                                     </div>
+                                    @endif
                                 @endforeach
                             </div>
 

@@ -53,5 +53,5 @@
             </div>
         </form>
     </x-auth-card>
-    <embed src="{{ asset('/img/log.mp3') }}" loop="false" autostart="true" width="2" height="0">
+    <embed src="{{ asset('/img/register.mp3') }}" loop="false" autostart="true" width="2" height="0">
 </x-guest-layout>
