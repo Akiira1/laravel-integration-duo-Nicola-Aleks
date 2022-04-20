@@ -23,15 +23,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     $titles = Title::all();
     $banners = Banner::all();
     $maps = Map::all();
     $services = Service::all();
     $testimonials = Testimonial::all();
-    $titles[0]->subtitle = str_replace(['(',')','[',']'],['<span>','</span>','<em>','</em>'], $titles[0]->subtitle);
-
+    foreach ($titles as $title) {
+        $title->subtitle = str_replace(['(',')','[',']'],['<span>','</span>','<em>','</em>'], $title->subtitle);
+    }
     return view('welcome', compact('titles', 'banners', 'maps', 'services', 'testimonials'));
 });
 Route::get('/admin', function () {
@@ -41,30 +41,30 @@ Route::get('/dashboard', function () {
     return view('/back/layouts/admin');
 })->middleware(['auth'])->name('dashboard');
 
-// Route::resource('/back/title', TitleController::class);
-// Route::resource('/back/banner', BannerController::class);
-
+// ------------------ Titles Routes ------------------
 Route::get('/back/titles', [TitleController::class, 'index'])->name('title.index');
 Route::get('/back/titles/{id}/show', [TitleController::class, 'show'])->name('title.show');
 Route::get('/back/titles/{id}/edit', [TitleController::class, 'edit'])->name('title.edit');
 Route::post('/back/titles/{id}/update', [TitleController::class, 'update'])->name('title.update');
-
+// ------------------ Banners Routes ------------------
 Route::get('/back/banners', [BannerController::class, 'index'])->name('banner.index');
 Route::get('/back/banners/{id}/edit', [BannerController::class, 'edit'])->name('banner.edit');
 Route::post('/back/banners/{id}/update', [BannerController::class, 'update'])->name('banner.update');
 
-
+// ------------------ Service Route ------------------
 Route::resource('/back/service', ServiceController::class);
+// ------------------ Testimonial Route ------------------
 Route::resource('/back/testimonial', TestimonialController::class);
 
 
 
 
-
+// ------------------ Maps Routes ------------------
 Route::get('/back/maps', [MapController::class, 'index'])->name('map.index');
 Route::get('/back/maps/{id}/show', [MapController::class, 'show'])->name('map.show');
 Route::get('/back/maps/{id}/edit', [MapController::class, 'edit'])->name('map.edit');
 Route::post('/back/maps/{id}/update', [MapController::class, 'update'])->name('map.update');
+// ------------------ Roles Routes ------------------
 Route::get('/back/roles', [RoleController::class, 'index'])->name('role.index');
 Route::get('/back/roles/{id}/show', [RoleController::class, 'show'])->name('role.show');
 Route::post('/back/roles/{id}/delete', [RoleController::class, 'destroy'])->name('role.destroy');

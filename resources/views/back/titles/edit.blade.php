@@ -18,7 +18,6 @@
                             @endif
                         <form action='{{ route('title.update', $title->id) }}' method='post'>
                             @csrf
-                            @method('put')
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">title</span>
                                 <input type="text" class="form-control" name='title' value='{{ $title->title }}'

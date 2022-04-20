@@ -3,8 +3,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="section-heading">
-                <h6>Our Services</h6>
-                <h4>Provided <em>Services</em></h4>
+                <h6>{{ $titles[1]->title }}</h6>
+                  <h4>{!! $titles[1]->subtitle !!}</h4>
               </div>
             </div>
             <div class="col-lg-12">
