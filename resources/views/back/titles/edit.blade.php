@@ -6,6 +6,7 @@
                 <div class="card border border-0">
                     <div class="card-body">
                         <h5 class="card-title text-center">Title</h5>
+                        <p class="m-4">* You can use [  ] to apply color to the text</p>
                         @if ($errors->any())
                             <div class='alert alert-danger'>
                                 <ul>
@@ -14,7 +15,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        @endif
+                            @endif
                         <form action='{{ route('title.update', $title->id) }}' method='post'>
                             @csrf
                             @method('put')

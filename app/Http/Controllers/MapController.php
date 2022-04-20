@@ -35,6 +35,6 @@ class MapController extends Controller
         $map->phone = $request->phone;
         $map->mobile = $request->mobile;
         $map->save();
-        return redirect()->route("map.index")->with("message", "Successful update !");
+        return redirect()->route("map.index")->with("message", "Map successfuly updated !");
     }
 }

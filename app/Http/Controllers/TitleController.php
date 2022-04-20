@@ -51,10 +51,5 @@ class TitleController extends Controller
         $title->save(); // update_anchor
         return redirect()->route("title.index")->with("message", "Successful update !");
     }
-    public function destroy($id)
-    {
-        $title = Title::find($id);
-        $title->delete();
-        return redirect()->back()->with("message", "Successful delete !");
-    }
+
 }

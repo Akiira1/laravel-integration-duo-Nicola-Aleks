@@ -41,9 +41,19 @@ Route::get('/dashboard', function () {
     return view('/back/layouts/admin');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
-Route::resource('/back/title', TitleController::class);
-Route::resource('/back/banner', BannerController::class);
+// Route::resource('/back/title', TitleController::class);
+// Route::resource('/back/banner', BannerController::class);
+
+Route::get('/back/titles', [TitleController::class, 'index'])->name('title.index');
+Route::get('/back/titles/{id}/show', [TitleController::class, 'show'])->name('title.show');
+Route::get('/back/titles/{id}/edit', [TitleController::class, 'edit'])->name('title.edit');
+Route::post('/back/titles/{id}/update', [TitleController::class, 'update'])->name('title.update');
+
+Route::get('/back/banners', [BannerController::class, 'index'])->name('banner.index');
+Route::get('/back/banners/{id}/edit', [BannerController::class, 'edit'])->name('banner.edit');
+Route::post('/back/banners/{id}/update', [BannerController::class, 'update'])->name('banner.update');
+
+
 Route::resource('/back/service', ServiceController::class);
 Route::resource('/back/testimonial', TestimonialController::class);
 Route::get('/back/maps', [MapController::class, 'index'])->name('map.index');
@@ -53,3 +63,7 @@ Route::post('/back/maps/{id}/update', [MapController::class, 'update'])->name('m
 Route::get('/back/roles', [RoleController::class, 'index'])->name('role.index');
 Route::get('/back/roles/{id}/show', [RoleController::class, 'show'])->name('role.show');
 Route::post('/back/roles/{id}/delete', [RoleController::class, 'destroy'])->name('role.destroy');
+
+
+
+require __DIR__.'/auth.php';

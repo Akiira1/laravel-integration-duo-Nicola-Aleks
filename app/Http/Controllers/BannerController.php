@@ -13,27 +13,7 @@ class BannerController extends Controller
         $banners = Banner::all();
         return view("/back/banners/all",compact("banners"));
     }
-    public function create()
-    {
-        return view("/back/banners/create");
-    }
-    public function store(Request $request)
-    {
-        $banner = new Banner;
-        $request->validate([
-            'button'=> 'required',
-            'image'=> 'required',
-        ]); // store_validated_anchor;
-        $banner->button = $request->button;
-        $banner->image = $request->image;
-        $banner->save(); // store_anchor
-        return redirect()->route("banner.index")->with("message", "Successful storage !");
-    }
-    public function show($id)
-    {
-        $banner = Banner::find($id);
-        return view("/back/banners/show",compact("banner"));
-    }
+
     public function edit($id)
     {
         $banner = Banner::find($id);
@@ -49,12 +29,7 @@ class BannerController extends Controller
         $banner->button = $request->button;
         $banner->image = $request->image;
         $banner->save(); // update_anchor
-        return redirect()->route("banner.index")->with("message", "Successful update !");
+        return redirect()->route("banner.index")->with("message", "Banner successfuly updated !");
     }
-    public function destroy($id)
-    {
-        $banner = Banner::find($id);
-        $banner->delete();
-        return redirect()->back()->with("message", "Successful delete !");
-    }
+
 }

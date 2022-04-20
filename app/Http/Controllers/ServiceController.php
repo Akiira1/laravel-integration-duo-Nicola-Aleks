@@ -29,7 +29,7 @@ class ServiceController extends Controller
         $service->icone = $request->file("icone")->hashName();
         $request->file('icone')->storePublicly('img/', 'public');
         $service->save(); // store_anchor
-        return redirect()->route("service.index")->with("message", "Successful storage !");
+        return redirect()->route("service.index")->with("message", "New Service successfuly created !");
     }
     public function show($id)
     {
@@ -54,12 +54,12 @@ class ServiceController extends Controller
         $service->title = $request->title;
         $service->description = $request->description;
         $service->save(); // update_anchor
-        return redirect()->route("service.index")->with("message", "Successful update !");
+        return redirect()->route("service.index")->with("message", "Service successfuly updated !");
     }
     public function destroy($id)
     {
         $service = Service::find($id);
         $service->delete();
-        return redirect()->back()->with("message", "Successful delete !");
+        return redirect()->back()->with("message", "Service successfuly deleted !");
     }
 }

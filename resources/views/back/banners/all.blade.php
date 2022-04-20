@@ -16,7 +16,6 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('banner.create') }}' role='button'>Create</a>
         <table class='table'>
             <thead>
                 <tr>
@@ -31,17 +30,12 @@
                     <tr>
                         <th scope='row'>{{ $banner->id }}</th>
 						<td>{{ $banner->button }}</td>
-						<td><img style='width: 50px; height: 50px;' src="{{ '/img/' . $banner->image }}" alt="">
+						<td><img style='width: 150px; height: 150px;' src="{{ '/img/' . $banner->image }}" alt="">
                         </td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <form action='{{ route('banner.destroy', $banner->id) }}' method='post'>
-                                    @csrf
-                                    @method('delete')
-                                    <button class='btn btn-danger' type=submit>Delete</button>
-                                </form>
+                                
                                 <a class='btn btn-primary' href='{{ route('banner.edit', $banner->id) }}' role='button'>Edit</a>
-                                <a class='btn btn-primary' href='{{ route('banner.show', $banner->id) }}' role='button'>Read</a>
                             </div>
                         </td>
                     </tr>

@@ -22,6 +22,6 @@ class RoleController extends Controller
     {
         $role = Role::find($id);
         $role->delete();
-        return redirect()->back()->with("message", "Successful delete !");
+        return redirect()->back()->with("message", "Role successfuly deleted !");
     }
 }
