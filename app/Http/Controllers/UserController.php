@@ -27,10 +27,12 @@ class UserController extends Controller
             'name'=> 'required',
             'email'=> 'required',
             'role'=> 'required',
+            'password'=> 'required',
         ]); // store_validated_anchor;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->role_id = $request->role;
+        $user->password = $request->password;
         $user->save(); // store_anchor
         return redirect()->route("user.index")->with("message", "New User successfuly created !");
     }
@@ -54,10 +56,12 @@ class UserController extends Controller
             'role'=> 'required',
             'name'=> 'required',
             'email'=> 'required',
+            'password'=> 'required',
         ]); // update_validated_anchor;
-        $user->role_id = $request->role;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->role_id = $request->role;
+        $user->password = $request->password;
         $user->save(); // update_anchor
         return redirect()->route("user.index")->with("message", "User successfuly updated !");
     }
