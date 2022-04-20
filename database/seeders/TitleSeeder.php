@@ -22,27 +22,16 @@ class TitleSeeder extends Seeder
 		]);
         DB::table("titles")->insert([
 			'title' => 'OUR SERVICES',
-			'subtitle' => 'Provided Services',
+			'subtitle' => 'Provided [Services]',
 		]);
         DB::table("titles")->insert([
 			'title' => 'OUR COURSES',
-			'subtitle' => 'What You Can Learn',
+			'subtitle' => 'What You Can [Learn]',
 		]);
         DB::table("titles")->insert([
 			'title' => 'TESTIMONIALS',
-			'subtitle' => 'What They Think',
+			'subtitle' => 'What They [Think]',
 		]);
-        DB::table("titles")->insert([
-			'title' => 'Welcome To Our School',
-			'subtitle' => 'Best Place To Learn Graphic Design!',
-		]);
-        DB::table("titles")->insert([
-			'title' => 'Welcome To Our School',
-			'subtitle' => 'Best Place To Learn Graphic Design!',
-		]);
-        DB::table("titles")->insert([
-			'title' => 'Welcome To Our School',
-			'subtitle' => 'Best Place To Learn Graphic Design!',
-		]);
+
     }
 }
