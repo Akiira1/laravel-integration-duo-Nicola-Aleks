@@ -21,7 +21,7 @@
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Icon</label>
                                 <input class="form-control" name='icone' type="file" id="formFile">
-                           </div>
+                            </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">title</span>
                                 <input type='text' name='title' aria-describedby="basic-addon1">
@@ -31,7 +31,7 @@
                                 <input type='text' name='description' aria-describedby="basic-addon1">
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button class="btn btn-success"type='submit'>Create</button>   {{--create_blade_anchor --}}
+                                <button class="btn btn-success" type='submit'>Create</button> {{-- create_blade_anchor --}}
                             </div>
                         </form>
                     </div>
