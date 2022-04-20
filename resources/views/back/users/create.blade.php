@@ -22,10 +22,20 @@
                                 <input type="text" class="form-control" name='name' value=''
                                     aria-describedby="basic-addon1">
                             </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">email</span>
+                                <input type="text" class="form-control" name='email' value=''
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">password</span>
+                                <input type="text" class="form-control" name='password' value=''
+                                    aria-describedby="basic-addon1">
+                            </div>
 
                             <div>
                                 <label>Role</label>
-                                <select name='equipe_id' class="form-control">
+                                <select name='role' class="form-control">
                                     @foreach ($roles as $role)
                                         <option value="{{ $role->id }}">{{ $role->name }}</option>
                                     @endforeach
