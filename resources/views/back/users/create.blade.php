@@ -17,7 +17,6 @@
                         @endif
                         <form action='{{ route('user.store') }}' method='post'>
                             @csrf
-                            @method('put')
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">name</span>
                                 <input type="text" class="form-control" name='name' value=''
