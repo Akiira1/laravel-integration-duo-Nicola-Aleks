@@ -31,7 +31,8 @@
                     <tr>
                         <th scope='row'>{{ $banner->id }}</th>
 						<td>{{ $banner->button }}</td>
-						<td>{{ $banner->image }}</td>
+						<td><img style='width: 50px; height: 50px;' src="{{ '/img/' . $banner->image }}" alt="">
+                        </td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
                                 <form action='{{ route('banner.destroy', $banner->id) }}' method='post'>
