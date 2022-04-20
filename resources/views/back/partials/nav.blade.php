@@ -350,6 +350,13 @@
             </a>
             <span class="tooltip">Maps</span>
         </li>
+        <li>
+            <a href="{{ route('user.index') }}">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Users</span>
+            </a>
+            <span class="tooltip">Users</span>
+        </li>
 
         <li class="profile">
             <div class="profile-details">

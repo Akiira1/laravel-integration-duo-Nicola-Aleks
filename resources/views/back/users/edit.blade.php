@@ -5,7 +5,7 @@
             <div class="col-8">
                 <div class="card  border-0">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Testimonials</h5>
+                        <h5 class="card-title text-center">Users</h5>
                         @if ($errors->any())
                             <div class='alert alert-danger'>
                                 <ul>
@@ -15,25 +15,22 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action='{{ route('testimonial.update', $testimonial->id) }}' method='post'>
+                        <form action='{{ route('user.update', $user->id) }}' method='post'>
                             @csrf
                             @method('put')
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">name</span>
-                                <input type="text" class="form-control" name='name' value='{{ $testimonial->name }}'
+                                <input type="text" class="form-control" name='name' value='{{ $user->name }}'
                                     aria-describedby="basic-addon1">
                             </div>
 
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">post</span>
-                                <input type="text" class="form-control" name='post' value='{{ $testimonial->post }}'
-                                    aria-describedby="basic-addon1">
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">description</span>
-                                <input type="text" class="form-control" name='description'
-                                    value='{{ $testimonial->description }}' aria-describedby="basic-addon1">
+                            <div>
+                                <label>Role</label>
+                                <select name='equipe_id' class="form-control">
+                                    @foreach ($roles as $role)
+                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="d-flex justify-content-center">
                                 

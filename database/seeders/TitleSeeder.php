@@ -32,6 +32,5 @@ class TitleSeeder extends Seeder
 			'title' => 'TESTIMONIALS',
 			'subtitle' => 'What They [Think]',
 		]);
-
     }
 }

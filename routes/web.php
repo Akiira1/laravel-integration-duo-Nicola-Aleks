@@ -6,6 +6,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use App\Models\Banner;
 use App\Models\Map;
 use App\Models\Service;
@@ -55,6 +56,8 @@ Route::post('/back/banners/{id}/update', [BannerController::class, 'update'])->n
 Route::resource('/back/service', ServiceController::class);
 // ------------------ Testimonial Route ------------------
 Route::resource('/back/testimonial', TestimonialController::class);
+// ------------------ User Route ------------------
+Route::resource('/back/user', UserController::class);
 
 
 
