@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class BannerController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('RoleVerification');
+    }
     public function index()
     {
         $banners = Banner::all();

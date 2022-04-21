@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class MapController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('RoleVerification')->only(['edit', 'update', 'destroy']);
+    }
     public function index()
     {
         $maps = Map::all();
