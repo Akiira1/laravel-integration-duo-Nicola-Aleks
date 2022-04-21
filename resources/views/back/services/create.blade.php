@@ -33,11 +33,11 @@
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">title</span>
-                                <input type='text' name='title' aria-describedby="basic-addon1">
+                                <input type='text' name='title' value='' aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">description</span>
-                                <input type='text' name='description' aria-describedby="basic-addon1">
+                                <input type='text' name='description' value='' aria-describedby="basic-addon1">
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button class="btn btn-success" type='submit'>Create</button> {{-- create_blade_anchor --}}

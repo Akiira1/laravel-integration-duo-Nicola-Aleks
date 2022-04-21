@@ -43,7 +43,7 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 
-                                <button type='submit'>Create</button> {{-- create_blade_anchor --}}
+                                <button class="btn btn-success mt-2"type='submit'>Create</button> {{-- create_blade_anchor --}}
                             </div>
                         </form>
                     </div>
