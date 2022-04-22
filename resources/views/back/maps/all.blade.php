@@ -8,6 +8,10 @@
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
             </div>
+        @elseif (session()->has('access'))
+            <div class='alert alert-danger'>
+                {{ session()->get('access') }}
+            </div>
         @endif
         @if ($errors->any())
             <div class='alert alert-danger'>
