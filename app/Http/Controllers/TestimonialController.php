@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 class TestimonialController extends Controller
 {
     //
-    public function __construct(){
-        $this->middleware('WebmasterVerification')->only('edit');
-    }   
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('WebmasterVerification');
+    }
+
     public function index()
     {
         $testimonials = Testimonial::all();
-        return view("/back/testimonials/all",compact("testimonials"));
+        return view("/back/testimonials/all", compact("testimonials"));
     }
     public function create()
     {
@@ -24,9 +27,9 @@ class TestimonialController extends Controller
     {
         $testimonial = new Testimonial;
         $request->validate([
-            'name'=> 'required',
-            'post'=> 'required',
-            'description'=> 'required',
+            'name' => 'required',
+            'post' => 'required',
+            'description' => 'required',
         ]); // store_validated_anchor;
         $testimonial->name = $request->name;
         $testimonial->post = $request->post;
@@ -37,20 +40,20 @@ class TestimonialController extends Controller
     public function show($id)
     {
         $testimonial = Testimonial::find($id);
-        return view("/back/testimonials/show",compact("testimonial"));
+        return view("/back/testimonials/show", compact("testimonial"));
     }
     public function edit($id)
     {
         $testimonial = Testimonial::find($id);
-        return view("/back/testimonials/edit",compact("testimonial"));
+        return view("/back/testimonials/edit", compact("testimonial"));
     }
     public function update($id, Request $request)
     {
         $testimonial = Testimonial::find($id);
         $request->validate([
-            'name'=> 'required',
-            'post'=> 'required',
-            'description'=> 'required',
+            'name' => 'required',
+            'post' => 'required',
+            'description' => 'required',
         ]); // update_validated_anchor;
         $testimonial->name = $request->name;
         $testimonial->post = $request->post;

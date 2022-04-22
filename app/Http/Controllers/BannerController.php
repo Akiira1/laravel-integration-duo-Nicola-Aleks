@@ -10,7 +10,6 @@ class BannerController extends Controller
     //
     public function __construct(){
         $this->middleware('adminVerification');
-        
     }
     public function index()
     {
