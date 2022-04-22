@@ -7,12 +7,6 @@ use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
-    //
-    public function __construct(){
-        $this->middleware('adminVerification');
-        $this->middleware('auth');
-
-    }
     public function index()
     {
         $roles = Role::all();

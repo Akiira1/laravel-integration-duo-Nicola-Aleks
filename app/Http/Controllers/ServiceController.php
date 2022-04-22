@@ -7,12 +7,6 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    //
-    public function __construct(){
-        $this->middleware('adminVerification');
-        $this->middleware('auth');
-
-    }
     public function index()
     {
         $services = Service::all();
