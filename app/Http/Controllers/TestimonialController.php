@@ -9,7 +9,8 @@ class TestimonialController extends Controller
 {
     //
     public function __construct(){
-        $this->middleware('RoleVerification');
+        $this->middleware('adminVerification');
+        $this->middleware('WebmasterVerification')->only(['index','create','edit']);
     }
     public function index()
     {

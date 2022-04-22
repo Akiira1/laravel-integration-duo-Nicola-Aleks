@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Map;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MapController extends Controller
 {
     //
     public function __construct(){
-        $this->middleware('RoleVerification')->only(['edit', 'update', 'destroy']);
+        if (Auth::user()->role_id == 1) {
+            $this->middleware('adminVerification');
+        }elseif(Auth::user()->role_id == 5){
+            $this->middleware('WebmasterVerification')->only(['create','edit']);
+        }
+        
+        // $this->middleware('adminVerification');
     }
     public function index()
     {
