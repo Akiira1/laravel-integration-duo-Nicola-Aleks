@@ -20,7 +20,7 @@ class RoleVerification
         if(Auth::check() && Auth::user()->role_id == 1) {
             return $next($request);
         }else{
-            return dd('You are not authorized to access this page');
+            return redirect()->back()->with("access", "You can't access on this page, Aleks");
         }
     }
 }

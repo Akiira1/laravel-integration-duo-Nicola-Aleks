@@ -1,5 +1,19 @@
 @extends('back.layouts.app')
 @section('content')
+@if (session()->has('access'))
+            <div class='alert alert-danger'>
+                {{ session()->get('access') }}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class='alert alert-danger'>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 <style>
     .pos1 {
         position: relative;
