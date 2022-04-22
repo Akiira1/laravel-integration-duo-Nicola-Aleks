@@ -10,7 +10,8 @@ class ServiceController extends Controller
     //
     public function __construct(){
         $this->middleware('adminVerification');
-        $this->middleware('WebmasterVerification');
+        $this->middleware('auth');
+
     }
     public function index()
     {
