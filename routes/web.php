@@ -40,7 +40,7 @@ Route::get('/admin', function () {
 });
 Route::get('/dashboard', function () {
     return view('/back/layouts/admin');
-})->middleware(['auth'])->name('dashboard');
+})->name('dashboard');
 
 // ------------------ Titles Routes ------------------
 Route::get('/back/titles', [TitleController::class, 'index'])->name('title.index');
