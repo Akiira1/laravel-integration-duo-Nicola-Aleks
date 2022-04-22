@@ -9,15 +9,12 @@ use Illuminate\Support\Facades\Auth;
 class MapController extends Controller
 {
     //
-    public function __construct(){
-        if (Auth::user()->role_id == 1) {
-            $this->middleware('adminVerification');
-        }elseif(Auth::user()->role_id == 5){
-            $this->middleware('WebmasterVerification')->only(['create','edit']);
-        }
-        
-        // $this->middleware('adminVerification');
+    public function __construct()
+    {
+        $this->middleware('WebmasterVerification');
+        $this->middleware('adminVerification');
     }
+
     public function index()
     {
         $maps = Map::all();

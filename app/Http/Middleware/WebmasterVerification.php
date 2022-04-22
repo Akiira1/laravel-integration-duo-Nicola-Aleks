@@ -17,10 +17,10 @@ class WebmasterVerification
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->role_id == 5) {
+        if(Auth::user()->role_id === 5) {
             return $next($request);
         }else{
-            return redirect()->back()->with("access", "You can't access on this page");
+            return dd("You can't access on this page " . Auth::user()->role->name);
         }
     }
 }
