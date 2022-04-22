@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WebmasterVerification
+class RoleVerification
 {
     /**
      * Handle an incoming request.
@@ -15,12 +15,13 @@ class WebmasterVerification
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
-        if(Auth::check() && Auth::user()->role_id === 5 || Auth::user()->role_id === 1) {
-            return $next($request);
-        }else{
-            return dd("You can't access on this page " . 'plop');
-        }
-    }
+//     public function handle(Request $request, Closure $next)
+//     {
+//         if(Auth::check() && Auth::user()->role_id == 1) {
+//             return $next($request);
+//         }else{
+//             return redirect()->back()->with("access", "You can't access on this page, Aleks");
+//         }
+//     }
+// }
 }

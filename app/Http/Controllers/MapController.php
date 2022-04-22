@@ -12,7 +12,6 @@ class MapController extends Controller
     public function __construct()
     {
         $this->middleware('WebmasterVerification');
-        $this->middleware('adminVerification');
     }
 
     public function index()

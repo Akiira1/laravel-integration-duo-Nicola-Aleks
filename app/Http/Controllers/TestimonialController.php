@@ -9,9 +9,8 @@ class TestimonialController extends Controller
 {
     //
     public function __construct(){
-        $this->middleware('adminVerification')->only('edit');
-        $this->middleware('WebmasterVerification')->only(['create','edit']);
-    }
+        $this->middleware('WebmasterVerification')->only('edit');
+    }   
     public function index()
     {
         $testimonials = Testimonial::all();
