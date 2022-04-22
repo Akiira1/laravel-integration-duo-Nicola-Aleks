@@ -11,7 +11,7 @@ class TestimonialController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('WebmasterVerification');
+        $this->middleware('WebmasterVerification')->only('edit');
     }
 
     public function index()
