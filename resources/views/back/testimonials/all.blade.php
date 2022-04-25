@@ -18,31 +18,41 @@
                 </ul>
             </div>
         @endif
-        
+
         <table class='table'>
             <thead>
                 <tr>
-					<th scope='col'>name</th>
-					<th scope='col'>post</th>
-					<th scope='col'>description</th>
+                    <th scope='col'>name</th>
+                    <th scope='col'>post</th>
+                    <th scope='col'>description</th>
                     <th scope='col'>Action</th> {{-- all_tr_anchor --}}
                 </tr>
             </thead>
             <tbody>
                 @foreach ($testimonials as $testimonial)
                     <tr>
-						<td>{{ $testimonial->name }}</td>
-						<td>{{ $testimonial->post }}</td>
-						<td>{{ $testimonial->description }}</td>
+                        <td>{{ $testimonial->name }}</td>
+                        <td>{{ $testimonial->post }}</td>
+                        <td>{{ $testimonial->description }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <form action='{{ route('testimonial.destroy', $testimonial->id) }}' method='post'>
-                                    @csrf
-                                    @method('delete')
-                                    <button class='btn btn-danger' type=submit>Delete</button>
-                                </form>
-                                <a class='btn btn-primary' href='{{ route('testimonial.edit', $testimonial->id) }}' role='button'>Edit</a>
-                                <a class='btn btn-primary' href='{{ route('testimonial.show', $testimonial->id) }}' role='button'>Read</a>
+                                @can('delete', $testimonial)
+                                    <form action='{{ route('testimonial.destroy', $testimonial->id) }}' method='post'>
+                                        @csrf
+                                        @method('delete')
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+
+                                @can('update', $testimonial)
+                                    <a class='btn btn-primary' href='{{ route('testimonial.edit', $testimonial->id) }}'
+                                        role='button'>Edit
+                                    </a>
+                                @endcan
+
+                                <a class='btn btn-primary' href='{{ route('testimonial.show', $testimonial->id) }}'
+                                    role='button'>Read
+                                </a>
                             </div>
                         </td>
                     </tr>

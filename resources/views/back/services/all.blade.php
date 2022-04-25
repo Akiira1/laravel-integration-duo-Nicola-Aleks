@@ -18,31 +18,39 @@
                 </ul>
             </div>
         @endif
-        
+
         <table class='table'>
             <thead>
                 <tr>
-					<th scope='col'>icone</th>
-					<th scope='col'>title</th>
-					<th scope='col'>description</th>
+                    <th scope='col'>icone</th>
+                    <th scope='col'>title</th>
+                    <th scope='col'>description</th>
                     <th scope='col'>Action</th> {{-- all_tr_anchor --}}
                 </tr>
             </thead>
             <tbody>
                 @foreach ($services as $service)
                     <tr>
-						<td><img src="{{"/img/" . $service->icone }}" alt=""></td>
-						<td>{{ $service->title }}</td>
-						<td>{{ $service->description }}</td>
+                        <td><img src="{{ '/img/' . $service->icone }}" alt=""></td>
+                        <td>{{ $service->title }}</td>
+                        <td>{{ $service->description }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <form action='{{ route('service.destroy', $service->id) }}' method='post'>
-                                    @csrf
-                                    @method('delete')
-                                    <button class='btn btn-danger' type=submit>Delete</button>
-                                </form>
-                                <a class='btn btn-primary' href='{{ route('service.edit', $service->id) }}' role='button'>Edit</a>
-                                <a class='btn btn-primary' href='{{ route('service.show', $service->id) }}' role='button'>Read</a>
+                                @can('delete', $service)
+                                    <form action='{{ route('service.destroy', $service->id) }}' method='post'>
+                                        @csrf
+                                        @method('delete')
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                                @can('update', $service)
+                                    <a class='btn btn-primary' href='{{ route('service.edit', $service->id) }}'
+                                        role='button'>Edit
+                                    </a>
+                                @endcan
+                                <a class='btn btn-primary' href='{{ route('service.show', $service->id) }}'
+                                    role='button'>Read
+                                </a>
                             </div>
                         </td>
                     </tr>
