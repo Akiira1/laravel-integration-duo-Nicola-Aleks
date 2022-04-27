@@ -12,6 +12,7 @@ use App\Models\Map;
 use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Title;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*

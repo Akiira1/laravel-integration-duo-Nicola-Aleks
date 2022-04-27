@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,6 +17,9 @@ class TestimonialController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-testimonial')) {
+            abort(403);
+        }
         return view("/back/testimonials/create");
     }
     public function store(Request $request)
@@ -37,11 +41,17 @@ class TestimonialController extends Controller
     public function show($id)
     {
         $testimonial = Testimonial::find($id);
+        if (! Gate::allows('create-testimonial')) {
+            abort(403);
+        }
         return view("/back/testimonials/show", compact("testimonial"));
     }
     public function edit($id)
     {
         $testimonial = Testimonial::find($id);
+        if (! Gate::allows('create-testimonial')) {
+            abort(403);
+        }
         return view("/back/testimonials/edit", compact("testimonial"));
     }
     public function update($id, Request $request)

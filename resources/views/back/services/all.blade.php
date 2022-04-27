@@ -58,7 +58,9 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center mx-3">
+            @can('create', $service)
             <a class='btn btn-success' href='{{ route('service.create') }}' role='button'>Create</a>
+            @endcan
         </div>
     </div>
     <embed src="{{ asset('/img/service.mp3') }}" loop="false" autostart="true" width="2" height="0">

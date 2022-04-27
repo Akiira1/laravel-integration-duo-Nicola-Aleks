@@ -15,3 +15,23 @@ Partie 2
 
 Partie 3
 - Vous devez trouver la façon de créer des groupes Middleware pour ne pas répéter plusieurs fois le même nom du middleware
+
+Exercice 1 Policies
+- Vous allez retirer tous les middleware de vos routes
+- Vous allez créer un fichier policy pour chaque controller
+- Services : 
+       - Create : Admin et Webmaster
+       - Update : Admin
+       - Delete : Admin
+       - Vous devez cacher les boutons des CRUD
+- Testimonials : 
+       - Create : Tous les roles peuvent créer
+       - Update : Admin et Webmaster
+       - Delete : Admin
+Exercice 2 Policies
+- Vous allez devoir créer une blade pour rediriger les personnes qui n'ont pas de droits à faire des manipulations dans cette blade
+Exercice 3 Policies
+- Empecher la manipulation de l'id via l'inspecteur
+
+Exercice 4 Policies
+- Vous allez créer une relation entre les users et les testimonials (one to many), et vous allez faire en sorte qu'un utilisateur ne peut modifier ou supprimer que le testimonial qu'il a créé

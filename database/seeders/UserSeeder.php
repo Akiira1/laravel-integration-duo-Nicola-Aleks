@@ -21,24 +21,28 @@ class UserSeeder extends Seeder
             'email' => 'Nicola@molengeek.be',
             'password' => Hash::make('123456'),
             'role_id' => 1,
+            'testimonial_id' => 1,
         ]);
         DB::table('users')->insert([
             'name' => 'Akira',
             'email' => 'Akira@molengeek.be',
             'password' => Hash::make('123456'),
             'role_id' => 1,
+            'testimonial_id' => 1,
         ]);
         DB::table('users')->insert([
             'name' => 'Elias',
             'email' => 'Elias@molengeek.be',
             'password' => Hash::make('123456'),
             'role_id' => 4,
+            'testimonial_id' => 1,
         ]);
         DB::table('users')->insert([
             'name' => 'webmaster',
             'email' => 'webmaster@molengeek.be',
             'password' => Hash::make('123456'),
             'role_id' => 5,
+            'testimonial_id' => 1,
         ]);
     }
 }

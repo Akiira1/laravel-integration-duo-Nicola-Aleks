@@ -1471,3 +1471,19 @@ select {
   border-radius: 15px;
 }
 
+
+
+#canvas {
+  /* width: 200px;
+  height: 200px; */
+  margin: auto;
+  transform: rotate(45deg);
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  perspective: 800px;
+  border: 1px solid rgb(6, 65, 88);
+}

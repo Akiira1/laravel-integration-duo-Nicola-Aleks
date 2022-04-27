@@ -42,12 +42,7 @@ class ServicePolicy
      */
     public function create(User $user)
     {
-        if (in_array($user->role_id, [1, 5])) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return in_array($user->role_id, [1,5]);
     }
 
     /**
@@ -59,12 +54,7 @@ class ServicePolicy
      */
     public function update(User $user, Service $service)
     {
-        if ($user->role_id === 1  && Auth::id()) {
-            return true;
-        }
-        else {
-            false;
-        }
+        return $user -> role_id === 1;
     }
 
     /**
@@ -76,7 +66,7 @@ class ServicePolicy
      */
     public function delete(User $user, Service $service)
     {
-        return $user->role_id === 1;
+        return $user -> role_id === 1;
     }
 
     /**

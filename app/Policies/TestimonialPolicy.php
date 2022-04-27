@@ -42,13 +42,8 @@ class TestimonialPolicy
      */
     public function create(User $user)
     {
-        // return $user->role_id === 1;
-        if (in_array($user->role_id, [1, 5])) {
-            return true;
-        }
-        else {
-            false;
-        }
+        // return $user -> role_id === 1;
+        return in_array($user->role_id, [1,5]);
     }
 
     /**
@@ -60,12 +55,7 @@ class TestimonialPolicy
      */
     public function update(User $user, Testimonial $testimonial)
     {
-        if (in_array($user->role_id, [1, 5]) && Auth::id()) {
-            return true;
-        }
-        else {
-            false;
-        }
+        return in_array($user->role_id, [1,5]);
     }
 
     /**
@@ -77,12 +67,7 @@ class TestimonialPolicy
      */
     public function delete(User $user, Testimonial $testimonial)
     {
-        if ($user->role_id === 1) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return $user -> role_id === 1;
     }
 
     /**
