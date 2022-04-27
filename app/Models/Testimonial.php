@@ -14,6 +14,10 @@ class Testimonial extends Model
 		'post',
 		'description',
 	]; // model_anchor
+	public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 	protected $table = "testimonials";
 }

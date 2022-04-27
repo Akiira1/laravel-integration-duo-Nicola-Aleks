@@ -36,12 +36,20 @@
 						<td>{{ $testimonial->description }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <form action='{{ route('testimonial.destroy', $testimonial->id) }}' method='post'>
-                                    @csrf
-                                    @method('delete')
-                                    <button class='btn btn-danger' type=submit>Delete</button>
-                                </form>
+                            
+                                @can ('delete', $testimonial)
+                                
+                                    <form action='{{ route('testimonial.destroy', $testimonial->id) }}' method='post'>
+                                        @csrf
+                                        @method('delete')
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+
+                                @can('update', $testimonial)
                                 <a class='btn btn-primary' href='{{ route('testimonial.edit', $testimonial->id) }}' role='button'>Edit</a>
+                                @endcan
+
                                 <a class='btn btn-primary' href='{{ route('testimonial.show', $testimonial->id) }}' role='button'>Read</a>
                             </div>
                         </td>
@@ -50,7 +58,9 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center mx-3">
+            @can('create', $testimonial)
             <a class='btn btn-success' href='{{ route('testimonial.create') }}' role='button'>Create</a>
+            @endcan
         </div>
     </div>
     <embed src="{{ asset('/img/testi.mp3') }}" loop="false" autostart="true" width="2" height="0">

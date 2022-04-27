@@ -36,12 +36,16 @@
 						<td>{{ $service->description }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
+                                @can('delete', $service)
                                 <form action='{{ route('service.destroy', $service->id) }}' method='post'>
                                     @csrf
                                     @method('delete')
                                     <button class='btn btn-danger' type=submit>Delete</button>
                                 </form>
+                                @endcan
+                                @can('update', $service)
                                 <a class='btn btn-primary' href='{{ route('service.edit', $service->id) }}' role='button'>Edit</a>
+                                @endcan
                                 <a class='btn btn-primary' href='{{ route('service.show', $service->id) }}' role='button'>Read</a>
                             </div>
                         </td>
@@ -50,7 +54,9 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center mx-3">
+            @can('create', $service)
             <a class='btn btn-success' href='{{ route('service.create') }}' role='button'>Create</a>
+            @endcan
         </div>
     </div>
     <embed src="{{ asset('/img/service.mp3') }}" loop="false" autostart="true" width="2" height="0">

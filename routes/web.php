@@ -12,6 +12,7 @@ use App\Models\Map;
 use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Title;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,7 +44,7 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 // ------------------ Titles Routes ------------------
-Route::middleware(['auth','adminVerification'])->group(function(){
+
     Route::get('/back/titles', [TitleController::class, 'index'])->name('title.index');
     Route::get('/back/titles/{id}/show', [TitleController::class, 'show'])->name('title.show');
     Route::get('/back/titles/{id}/edit', [TitleController::class, 'edit'])->name('title.edit');
@@ -62,8 +63,8 @@ Route::middleware(['auth','adminVerification'])->group(function(){
     Route::post('/back/roles/{id}/delete', [RoleController::class, 'destroy'])->name('role.destroy');
     
     
-});
-Route::middleware(['auth','WebmasterVerification'])->group(function(){
+
+
     // ------------------ Testimonial Route ------------------
     Route::resource('/back/testimonial', TestimonialController::class);
     // ------------------ Maps Routes ------------------
@@ -71,5 +72,5 @@ Route::middleware(['auth','WebmasterVerification'])->group(function(){
     Route::get('/back/maps/{id}/show', [MapController::class, 'show'])->name('map.show');
     Route::get('/back/maps/{id}/edit', [MapController::class, 'edit'])->name('map.edit');
     Route::post('/back/maps/{id}/update', [MapController::class, 'update'])->name('map.update');
-});
+    
 require __DIR__.'/auth.php';

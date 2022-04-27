@@ -1,5 +1,6 @@
 @extends('back.layouts.app')
 @section('content')
+ 
 @if (session()->has('access'))
             <div class='alert alert-danger'>
                 {{ session()->get('access') }}
@@ -35,7 +36,9 @@
     }
 </style>
 <div class="pos1">
-   <div class="pos2">
+   <div class="pos2 d-flex ">
+     {{-- show Authentification user name --}}
+ <p class="card-text text-center">{{ Auth::user()->name }}</p>
     <button class="btn m-0 p-0">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -55,6 +58,7 @@
         <div class="card" style="width: 18rem;">
             <img src="{{ asset('/img/1.jpg') }}" class="card-img-top border border-0 mt-3 rounded-3" alt="...">
             <div class="card-body d-flex justify-content-center">
+              
                     <audio id="myAudio">
                         <source src="{{ asset('/img/fart-03.mp3') }}" type="audio/mpeg">
                       </audio>
