@@ -44,7 +44,6 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 // ------------------ Titles Routes ------------------
-
     Route::get('/back/titles', [TitleController::class, 'index'])->name('title.index');
     Route::get('/back/titles/{id}/show', [TitleController::class, 'show'])->name('title.show');
     Route::get('/back/titles/{id}/edit', [TitleController::class, 'edit'])->name('title.edit');
@@ -64,7 +63,6 @@ Route::get('/dashboard', function () {
     
     
 
-
     // ------------------ Testimonial Route ------------------
     Route::resource('/back/testimonial', TestimonialController::class);
     // ------------------ Maps Routes ------------------
@@ -72,5 +70,4 @@ Route::get('/dashboard', function () {
     Route::get('/back/maps/{id}/show', [MapController::class, 'show'])->name('map.show');
     Route::get('/back/maps/{id}/edit', [MapController::class, 'edit'])->name('map.edit');
     Route::post('/back/maps/{id}/update', [MapController::class, 'update'])->name('map.update');
-    
 require __DIR__.'/auth.php';

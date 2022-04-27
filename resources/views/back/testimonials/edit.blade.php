@@ -36,8 +36,7 @@
                                     value='{{ $testimonial->description }}' aria-describedby="basic-addon1">
                             </div>
                             <div class="d-flex justify-content-center">
-                                
-                            <button class="btn btn-primary" type='submit'>Update</button> {{-- update_blade_anchor --}}
+                                <button class="btn btn-primary" type='submit'>Update</button> {{-- update_blade_anchor --}}
                             </div>
                         </form>
                     </div>
