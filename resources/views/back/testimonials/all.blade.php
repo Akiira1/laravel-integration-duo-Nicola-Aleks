@@ -38,8 +38,9 @@
                             <div class='d-flex'>
                                 @can('delete', $testimonial)
                                     <form action='{{ route('testimonial.destroy', $testimonial->id) }}' method='post'>
-                                        @csrf
                                         @method('delete')
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ encrypt($testimonial->id) }}">
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
                                 @endcan

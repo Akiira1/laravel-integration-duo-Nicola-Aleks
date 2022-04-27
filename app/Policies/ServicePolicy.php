@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Auth;
 
 class ServicePolicy
 {
@@ -41,7 +42,12 @@ class ServicePolicy
      */
     public function create(User $user)
     {
-        return in_array($user->role_id, [1, 5]);
+        if (in_array($user->role_id, [1, 5])) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
@@ -53,7 +59,12 @@ class ServicePolicy
      */
     public function update(User $user, Service $service)
     {
-        return $user->role_id === 1;
+        if ($user->role_id === 1  && Auth::id()) {
+            return true;
+        }
+        else {
+            false;
+        }
     }
 
     /**

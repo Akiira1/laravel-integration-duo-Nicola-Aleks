@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Auth;
 
 class TestimonialPolicy
 {
@@ -42,7 +43,12 @@ class TestimonialPolicy
     public function create(User $user)
     {
         // return $user->role_id === 1;
-        return in_array($user->role_id, [1, 2, 3, 4, 5]); // exemple plusieurs roles
+        if (in_array($user->role_id, [1, 5])) {
+            return true;
+        }
+        else {
+            false;
+        }
     }
 
     /**
@@ -54,7 +60,12 @@ class TestimonialPolicy
      */
     public function update(User $user, Testimonial $testimonial)
     {
-        return in_array($user->role_id, [1, 5]);
+        if (in_array($user->role_id, [1, 5]) && Auth::id()) {
+            return true;
+        }
+        else {
+            false;
+        }
     }
 
     /**
@@ -66,7 +77,12 @@ class TestimonialPolicy
      */
     public function delete(User $user, Testimonial $testimonial)
     {
-        return $user->role_id === 1;
+        if ($user->role_id === 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**

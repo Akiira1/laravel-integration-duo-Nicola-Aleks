@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
@@ -58,11 +59,16 @@ class TestimonialController extends Controller
         $testimonial->save(); // update_anchor
         return redirect()->route("testimonial.index")->with("message", "Successful update !");
     }
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        $testimonial = Testimonial::find($id);
-        $this->authorize("delete", $testimonial);
-        $testimonial->delete();
-        return redirect()->back()->with("message", "Successful delete !");
+        if(decrypt($request->id) == $id){
+            $testimonial = Testimonial::find($id);
+            $this->authorize("delete", $testimonial);
+            $testimonial->delete();
+            return redirect()->back()->with("message", "Successful delete !");
+        }
+        else{
+            return redirect()->back()->with("message", "Vous n'avez pas le droit !");
+        }
     }
 }
