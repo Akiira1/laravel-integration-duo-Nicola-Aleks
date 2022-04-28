@@ -66,6 +66,7 @@ class TestimonialController extends Controller
         $testimonial->name = $request->name;
         $testimonial->post = $request->post;
         $testimonial->description = $request->description;
+        $testimonial->approved = $request->approved;
         $testimonial->save(); // update_anchor
         return redirect()->route("testimonial.index")->with("message", "Successful update !");
     }

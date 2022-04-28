@@ -9,13 +9,15 @@
             </div>
             <div class="col-lg-12">
                 <div class="owl-testimonials owl-carousel" style="position: relative; z-index: 5;">
-                    @foreach($testimonials->shuffle() as $testimonial)
-                        <div class="item">
-                            <p>“{{ $testimonial->description }}”</p>
-                            <h4>{{ $testimonial->name }}</h4>
-                            <span>{{ $testimonial->post }}</span>
-                            <img src="{{ asset('img/quote.png') }}" alt="">
-                        </div>
+                    @foreach ($testimonials->shuffle() as $testimonial)
+                        @if ($testimonial->approved == 1)
+                            <div class="item">
+                                <p>“{{ $testimonial->description }}”</p>
+                                <h4>{{ $testimonial->name }}</h4>
+                                <span>{{ $testimonial->post }}</span>
+                                <img src="{{ asset('img/quote.png') }}" alt="">
+                            </div>
+                        @endif
                     @endforeach
                 </div>
             </div>

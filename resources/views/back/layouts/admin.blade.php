@@ -1,6 +1,6 @@
 @extends('back.layouts.app')
 @section('content')
-<<<<<<< HEAD
+
     @if (session()->has('access'))
         <div class='alert alert-danger'>
             {{ session()->get('access') }}
@@ -40,7 +40,8 @@
 
     </style>
     <div class="pos1">
-        <div class="pos2">
+        <div class="pos2 d-flex ">
+            {{-- show Authentification user name --}}
             <button class="btn m-0 p-0">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -58,70 +59,9 @@
     <div class="container">
         <div class="row justify-content-center mt-4">
             <div class="card" style="width: 18rem;">
-                <img src="{{ asset('/img/1.jpg') }}" class="card-img-top border-0 mt-3 rounded-3" alt="...">
+                <img src="{{ asset('/img/1.jpg') }}" class="card-img-top border border-0 mt-3 rounded-3" alt="...">
                 <div class="card-body d-flex justify-content-center">
-=======
- 
-@if (session()->has('access'))
-            <div class='alert alert-danger'>
-                {{ session()->get('access') }}
-            </div>
-        @endif
-        @if ($errors->any())
-            <div class='alert alert-danger'>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-<style>
-    .pos1 {
-        position: relative;
-    }
-    .pos2 {
-        position: absolute;
-        top: 50%;
-        right: 0%;
-        
-    }
-    .postion-absolute{
-        right: 0;
-    }
-    .btn{
-        border-radius: 3px;
-        background: rgb(246,191,159);
-        background: linear-gradient(0deg, rgba(246,191,159,1) 10%, rgba(219,138,222,1) 100%);
-    
-    }
-</style>
-<div class="pos1">
-   <div class="pos2 d-flex ">
-     {{-- show Authentification user name --}}
- <p class="card-text text-center">{{ Auth::user()->name }}</p>
-    <button class="btn m-0 p-0">
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
 
-            <x-dropdown-link :href="route('logout')"
-                    onclick="event.preventDefault();
-                                this.closest('form').submit();">
-                {{ __('Log Out') }}
-            </x-dropdown-link>
-        </form>
-    </button>
-   </div>
-   <h1>You're Logged In : {{ Auth::user()->name }}</h1>
-</div>
- <embed src="{{ asset('/img/dash.mp3') }}" loop="false" autostart="true" width="2" height="0">
-<div class="container">
-    <div class="row justify-content-center mt-4">
-        <div class="card" style="width: 18rem;">
-            <img src="{{ asset('/img/1.jpg') }}" class="card-img-top border border-0 mt-3 rounded-3" alt="...">
-            <div class="card-body d-flex justify-content-center">
-              
->>>>>>> 4a816c914914887662f984d0cabb74582fac82d1
                     <audio id="myAudio">
                         <source src="{{ asset('/img/fart-03.mp3') }}" type="audio/mpeg">
                     </audio>

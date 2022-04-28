@@ -35,6 +35,17 @@
                                 <input type="text" class="form-control" name='description'
                                     value='{{ $testimonial->description }}' aria-describedby="basic-addon1">
                             </div>
+
+                            @if (Auth::user()->role_id == 1)
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">approved</span>
+                                <input type="text" class="form-control" name='approved'
+                                    value='{{ $testimonial->approved }}' aria-describedby="basic-addon1">
+                            </div>
+                            @endif
+                            
+
+
                             <div class="d-flex justify-content-center">
                                 <button class="btn btn-primary" type='submit'>Update</button> {{-- update_blade_anchor --}}
                             </div>
